@@ -1,0 +1,87 @@
+version: '3.1'
+intents:
+- affirm
+- bot_challenge
+- deny
+- goodbye
+- greet
+- booking
+- get_info
+- gratitude
+#- inform_date
+#- inform_session
+
+entities:
+- user_name
+- date
+- session
+
+slots:
+  user_name:
+    type: text
+    influence_conversation: true
+    mappings:
+      - type: from_text
+        conditions:
+         - active_loop: name_form
+           requested_slot: user_name
+  date:
+    type: text
+    mappings:
+    - type: from_text #from_entity
+      #intent: inform_event
+      conditions:
+      - active_loop: event_form
+        requested_slot: date
+  session:
+    type: text
+    mappings:
+    - type: from_text #from_entity
+      #intent: inform_time
+      conditions:
+      - active_loop: event_form
+        requested_slot: session
+
+forms:
+  name_form:
+    required_slots:
+    - user_name
+  event_form:
+    required_slots:
+    - date
+    - session
+    
+actions: 
+  #- action_hello_world
+  - action_add_event
+  - action_get_event
+
+responses:
+  utter_ask_event_form_date:
+  - text : "When would you like to set your appointment for?"
+  utter_ask_event_form_session:
+  - text: "We offer [30/60/90/120] minutes session for your preference. \n Which session appointment do you want?"
+  utter_ask_name:
+  - text: "Hey! May I have your name, please?"
+  utter_greet_name:
+  - text: "Hi {user_name},"
+  utter_inquiry:
+  - text: "How would you like us to help you?" 
+  utter_gratitude:
+  - text: "We're happy to help!"
+  # utter_greet:
+  # - text: Hey! How are you?
+  # utter_cheer_up:
+  # - text: 'Here is something to cheer you up:'
+  #   image: https://i.imgur.com/nGF1K8f.jpg
+  # utter_did_that_help:
+  # - text: Did that help you?
+  # utter_happy:
+  # - text: Great, carry on!
+  utter_goodbye:
+  - text: Bye
+  utter_iamabot:
+  - text: I am a bot, powered by Rasa.
+session_config:
+  session_expiration_time: 60
+  carry_over_slots_to_new_session: true

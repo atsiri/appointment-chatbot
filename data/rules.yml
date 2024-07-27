@@ -1,0 +1,47 @@
+version: "3.1"
+
+rules:
+
+- rule: Ask user name in the beginning of conversation
+  conversation_start: true 
+  wait_for_user_input: false
+  steps:
+   - intent: greet
+   - action: utter_ask_name
+   - action: name_form
+   - active_loop: null
+   - action: utter_greet_name
+   - action: utter_inquiry
+
+- rule: Say goodbye anytime the user says goodbye
+  steps:
+  - intent: goodbye
+  - action: utter_goodbye
+
+- rule: Say 'I am a bot' anytime the user challenges
+  steps:
+  - intent: bot_challenge
+  - action: utter_iamabot
+
+- rule: Get info
+  steps:
+  - intent: get_info
+  - action: action_get_event
+
+- rule: Activate form
+  steps:
+  - intent: booking
+  - action: event_form
+  - active_loop: event_form
+
+- rule: Submit form
+  condition:
+  - active_loop: event_form
+  steps:
+  - action: event_form
+  - active_loop: null
+  - slot_was_set:
+    - requested_slot: null
+  - action: action_add_event
+
+

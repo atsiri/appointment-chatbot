@@ -1,0 +1,97 @@
+version: "3.1"
+nlu:
+- intent: greet
+  examples: |
+    - hey
+    - hello
+    - hi
+    - hello there
+    - good morning
+    - good evening
+    - moin
+    - hey there
+    - let's go
+    - hey dude
+    - goodmorning
+    - goodevening
+    - good afternoon
+
+- intent: gratitude
+  examples: |
+    - thanks
+    - thank you
+    - great, thanks
+
+- intent: goodbye
+  examples: |
+    - cu
+    - good by
+    - cee you later
+    - good night
+    - bye
+    - goodbye
+    - have a nice day
+    - see you around
+    - bye bye
+    - see you later
+
+- intent: affirm
+  examples: |
+    - yes
+    - y
+    - indeed
+    - of course
+    - that sounds good
+    - correct
+
+- intent: deny
+  examples: |
+    - no
+    - n
+    - never
+    - I don't think so
+    - don't like that
+    - no way
+    - not really
+
+- intent: bot_challenge
+  examples: |
+    - are you a bot?
+    - are you a human?
+    - am I talking to a bot?
+    - am I talking to a human?
+
+- intent: booking
+  examples: |
+    - booking
+    - set a new appointment
+    - set up a meeting
+    - schedule therapy
+    - request a session with therapist
+    - book an appointment 
+    - I would like to book an appointment  
+    - I want to book an appointment  
+
+- intent: get_info
+  examples: |
+    - get info
+    - information of my booking
+    - I forgot my appointment
+    - remind me about my schedule
+    - when is my session?
+    - inquiry my booking
+    - what is on my calendar?
+    - when is in my schedule?
+
+# - intent: inform_date
+#   examples: |
+#     - [25/09/24 10:00:00](time)
+#     - [2024/07/24 12:00:00](time)
+
+# - intent: inform_session
+#   examples: |
+#     - [30](session)
+#     - [2 hours](session)
+
+
+
