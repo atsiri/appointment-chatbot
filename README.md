@@ -15,7 +15,9 @@ This is a preliminary version of Appointment Booking Agent with Rasa Open Source
 Currently the bot only able to make an appointment and checking the information of an existing booking. (More to look forward to.)
 
 To install:
--- pip3 install rasa
+```
+ pip3 install rasa
+```
 
 Ensure the existing library also follows the set of libraries in requirements.txt.
 
@@ -29,10 +31,16 @@ Steps to start project after rasa installation for:
     ```
 
 3. Open command prompt  inside  the location folder and write command below:
-    * rasa train
+    ```
+    rasa train
+    ```
 4. After finished training, start the rasa actions server by running this command:
-    * rasa run actions
+    ```
+    rasa run actions
+    ```
 5. Open split terminal while the actions server running, and type:
-    * rasa shell 
+    ```
+    rasa shell
+    ```
 6. Say hi to your chatbot!
 
