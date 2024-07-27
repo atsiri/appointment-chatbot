@@ -23,8 +23,10 @@ Steps to start project after rasa installation for:
 1. Download appointment-chatbot.zip and extract to open 
 2. Ensure this following script is present in endpoints.yml file:
 
+    ```
     action_endpoint:
         url: http://localhost:5055/webhook
+    ```
 
 3. Open command prompt  inside  the location folder and write command below:
     * rasa train
